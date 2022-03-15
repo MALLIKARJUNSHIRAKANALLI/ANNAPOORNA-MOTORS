@@ -1,0 +1,9 @@
+string strUrl =  "http://api.mVaayoo.com/mvaayooapi/MessageCompose?user=mallikarjunbs143@gmail.com:151697&senderID=TEST SMS&receipientno=9972034216&msgtxt=This is a test from mVaayoo API&state=4"; 
+WebRequest request = HttpWebRequest.Create(strUrl);
+HttpWebResponse response = (HttpWebResponse)request.GetResponse(); 
+Stream s = (Stream)response.GetResponseStream();
+StreamReader readStream = new StreamReader( s );
+string dataString = readStream.ReadToEnd();
+response.Close();
+s.Close();
+readStream.Close();
